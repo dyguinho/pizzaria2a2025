@@ -2,30 +2,37 @@ import {useState} from 'react'
  
 function App(){
  
-  const [nome, setNome] = useState('Ronaldo');
- 
-  const Formulario = () => {
-    return(
-      <>
-      <h4>Formulário de Inscrição</h4>
-      <input className="Nome"
-        name = "nome"
-         placeholder="Digite seu nome..."
-         onChange={(e)=>setNome(e.target.value)}
-         type="text" />
-      <button onClick={()=>{alert(nome)}}>
-      CLIQUE AQUI
-      </button>
-      </>  
-    )
-  }
- 
+    const [nome, setNome] = useState('O Usuario Pedro Machado Joga Mais que o Cristiano Ronaldo');
+    const Formulario = (props) => {
   return (
-    <div>
-       <h3>Pizzaria 2A</h3>
-     
-    </div>  
+    <>
+      <h4>Formulario de Inscrição</h4>
+      <input classNAme= "Nome"
+      name = "Nome"
+      placeholder = "Digite seu Nome..."
+      onChange={(value)=>setNome(e.target.value)}
+      type="text" />
+      <button onClick={()=>{
+        (props.texto != null) ? alert(props.texto) : alert(props.nome)
+        }}>
+        CLIQUE AQUI
+      </button>
+    </>
   )
 }
  
+ 
+  return (
+      <div>
+        <h3>Pizzaria 2A</h3>
+      <Formulario texto= "Texto Enviado pelo App"/>
+      <Formulario texto= "São Paulo Meu Amor !!"/>
+      <Formulario texto= "Paulistas freguêses"/>
+      <Formulario/>
+ 
+      </div>
+    )
+  }
+ 
 export default App
+ 
